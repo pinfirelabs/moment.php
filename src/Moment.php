@@ -1390,6 +1390,11 @@ class Moment extends \DateTime
             parent::createFromFormat($format, $time, $timezone) : 
             parent::createFromFormat($format, $time);
 
+        if ($date === false)
+        {
+            return false;
+        }
+
         return static::fromDateTime($date);
     }
 }
